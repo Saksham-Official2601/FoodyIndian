@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food Assistant Chatbot</title>
+
+    <style>
+        body {
+            background: #f7f7f7;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            color: #555;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🍽️ Food Assistant Chatbot</h1>
+        <p>Ask me anything about food, restaurants, menus, or ordering!</p>
+    </div>
+
+    <!-- Watson Assistant Chat Script -->
+    <script>
+        window.watsonAssistantChatOptions = {
+            integrationID: "3cfdd54b-1256-4a4f-ab6c-a35cdf19ed38", // The ID of this integration.
+            region: "eu-de", // The region your integration is hosted in.
+            serviceInstanceID: "6df2a591-6c2c-4952-970e-2e9b12080066", // The ID of your service instance.
+            onLoad: async (instance) => { await instance.render(); }
+        };
+        setTimeout(function(){
+            const t = document.createElement('script');
+            t.src = "https://web-chat.global.assistant.watson.appdomain.cloud/versions/" +
+                    (window.watsonAssistantChatOptions.clientVersion || 'latest') +
+                    "/WatsonAssistantChatEntry.js";
+            document.head.appendChild(t);
+        });
+    </script>
+</body>
+</html>
